@@ -1,4 +1,4 @@
-#ifnotdef PHONEBOOK_HPP
+#ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
 
 class Contact {

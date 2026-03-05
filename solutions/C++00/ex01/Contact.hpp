@@ -1,0 +1,25 @@
+#ifndef CONTACT_HPP
+#define CONTACT_HPP
+
+#include <string>
+
+class Contact {
+private:
+    std::string firstName;
+    std::string lastName;
+    std::string nickname;
+    std::string phoneNumber;
+    std::string darkestSecret;
+    bool        full; // чи цей контакт вже заповнений
+
+public:
+    Contact(); // конструктор (зробить isSet = false)
+
+    void setFirstName(const std::string& s);
+    void setLastName(const std::string& s);
+    void setNickname(const std::string& s);
+    void setPhoneNumber(const std::string& s);
+    void setDarkestSecret(const std::string& s);
+};
+
+#endif

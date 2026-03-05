@@ -1,11 +1,14 @@
 #include <iostream>
 #include <cctype> 
-#include "PhoneBook.hpp"
+#include "Phonebook.hpp"
 using namespace std;
 
-int main(int argc, char** argv)
+int main()
 {
-    //std::cout << "debug";
-    std::cout << std::endl;
+    
+    cout << "Write a command: ";
+    string command;
+    cin >> command;
+    cout << "You entered: " << command << std::endl;
     return (0);
 }

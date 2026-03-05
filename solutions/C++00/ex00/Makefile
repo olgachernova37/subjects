@@ -1,4 +1,14 @@
-CPPFLAGS= -g 
-STDFLAGS= -g -std=c++98 
+CXX= g++
+CXXFLAGS= -Wall -Wextra -Werror -g -std=c++98 
+TARGET= megaphone
+SRC= megaphone.cpp
 
-all: c++ $(CPPFLAGS) $(STDFLAGS) magaphone -o megaphone
+all: $(TARGET)
+
+$(TARGET): $(SRC)
+	$(CXX) $(CXXFLAGS) $(SRC) -o $(TARGET)
+	chmod +x $(TARGET)
+clean:
+	rm -f $(TARGET)	
+
+re: clean all
