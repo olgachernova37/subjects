@@ -1,7 +1,7 @@
 CXX= g++
 CXXFLAGS= -Wall -Wextra -Werror -g -std=c++98
 TARGET= crappyPhonebook
-SRC= crappyPhonebook.cpp Contact.cpp
+SRC= crappyPhonebook.cpp Contact.cpp Phonebook.cpp
 HEADERS= Contact.hpp Phonebook.hpp
 
 all: $(TARGET)

@@ -10,7 +10,6 @@ private:
     std::string nickname;
     std::string phoneNumber;
     std::string darkestSecret;
-    bool        full; // чи цей контакт вже заповнений
 
 public:
     Contact(); // конструктор (зробить isSet = false)

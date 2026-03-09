@@ -29,9 +29,6 @@ std::string Contact::getPhoneNumber() const {
 std::string Contact::getDarkestSecret() const {
     return darkestSecret;
 }
-// bool Contact::isFull() const {
-//     return full;
-// }
 
 void Contact::setFirstName(const std::string& fName) {
     firstName = fName;
