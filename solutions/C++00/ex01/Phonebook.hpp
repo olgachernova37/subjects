@@ -1,10 +1,20 @@
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
 
-class Contact {
+class Phonebook
 {
-    public:
-    protected:
     private:
-    
-}
+    Contact contacts[8];
+    int index;
+    int size;
+
+    public:
+    Phonebook();
+    ~Phonebook();
+
+    protected:
+
+
+};
+
+#endif
