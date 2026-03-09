@@ -29,7 +29,31 @@ std::string Contact::getPhoneNumber() const {
 std::string Contact::getDarkestSecret() const {
     return darkestSecret;
 }
-bool Contact::isFull() const {
-    return full;
-}
+// bool Contact::isFull() const {
+//     return full;
+// }
 
+void Contact::setFirstName(const std::string& fName) {
+    firstName = fName;
+}
+void Contact::setLastName(const std::string& lName) {
+    lastName = lName;
+}
+void Contact::setNickname(const std::string& nick) {
+    nickname = nick;
+}
+void Contact::setPhoneNumber(const std::string& pNumber) {
+    phoneNumber = pNumber;
+}
+void Contact::setDarkestSecret(const std::string& dSecret) {
+    darkestSecret = dSecret;
+
+}
+bool isFull(Contact& contact)
+{
+	if (contact.getLastName() == "" || contact.getFirstName() == "" || contact.getNickname() == "" || contact.getPhoneNumber() == "" || contact.getDarkestSecret() == "")
+	{
+		return false;
+	}
+	return true;
+}

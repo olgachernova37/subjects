@@ -1,5 +1,6 @@
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
+#include "Contact.hpp"
 
 class Phonebook
 {
@@ -11,6 +12,8 @@ class Phonebook
     public:
     Phonebook();
     ~Phonebook();
+
+    void searchContact();
 
     protected:
 
