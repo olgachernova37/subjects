@@ -13,3 +13,5 @@ clean:
 	rm -f $(TARGET)
 
 re: clean all
+
+PHONY: all clean re
