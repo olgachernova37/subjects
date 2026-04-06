@@ -10,7 +10,6 @@ Contact::Contact() {
 	nickname = "";
 	phoneNumber = "";
 	darkestSecret = "";
-	full = false;
 }
 Contact::~Contact() {
 }
