@@ -5,17 +5,17 @@
 
 #define BUFFER_SIZE 1024
 
-/* 
+/*
  * ФУНКЦІЯ: ft_popen
- * 
+ *
  * ОПИС: Запускає зовнішню програму та повертає файловий дескриптор
  * для читання її виходу або запису на її вхід.
- * 
+ *
  * ПАРАМЕТРИ:
  *   - file: імя файлу програми для виконання
  *   - av: масив аргументів для програми (повинен закінчуватися NULL)
  *   - type: 'r' для читання виходу, 'w' для запису на вхід
- * 
+ *
  * ПОВЕРТАЄ: файловий дескриптор у разі успіху, -1 у разі помилки
  */
 int ft_popen(const char *file, char *const av[], char type)
@@ -29,16 +29,16 @@ int ft_popen(const char *file, char *const av[], char type)
 
     // Створюємо дочірній процес
     pid = fork();
-    
+
     if (pid == 0)  // ДОЧІРНІЙ ПРОЦЕС
     {
         if (type == 'r')
         {
-            dup2(fd[1], STDOUT_FILENO);
+            dup2(fd[1], 1);
         }
         else  // type == 'w'
         {
-            dup2(fd[0], STDIN_FILENO);
+            dup2(fd[0], 0);
         }
         close(fd[0]);
         close(fd[1]);
@@ -85,7 +85,7 @@ char *get_next_line(int fd)
         {
             end = read(fd, buffer, BUFFER_SIZE);
             pos = 0;
-            
+
             // Якщо нічого не прочитали і рядок пустий - повертаємо NULL
             if (end <= 0)
             {
@@ -109,7 +109,7 @@ char *get_next_line(int fd)
         }
 
         line[i++] = buffer[pos++];
-        
+
         // Запобігаємо переповнення буфера
         if (i >= BUFFER_SIZE - 1)
         {
@@ -131,7 +131,7 @@ void example_read(void)
 
     printf("=== ПРИКЛАД 1: Читання виходу (ls -la) ===\n");
     fd = ft_popen("ls", (char *const []){"ls", "-la", NULL}, 'r');
-    
+
     if (fd == -1)
     {
         printf("Помилка: не вдалося запустити команду\n");
@@ -143,7 +143,7 @@ void example_read(void)
         printf("%s", line);
         free(line);
     }
-    
+
     close(fd);
 }
 
@@ -159,9 +159,9 @@ void example_write(void)
 
     printf("\n=== ПРИКЛАД 2: Запис на вхід (cat) ===\n");
     printf("Напишемо: %s", text);
-    
+
     fd = ft_popen("cat", (char *const []){"cat", NULL}, 'w');
-    
+
     if (fd == -1)
     {
         printf("Помилка: не вдалося запустити команду\n");
@@ -182,10 +182,10 @@ void example_pipe_combination(void)
 
     printf("\n=== ПРИКЛАД 3: Комбінація (ls | grep) ===\n");
     printf("Ищемо файли з розширенням .c\n");
-    
+
     // Запускаємо ls
     fd1 = ft_popen("ls", (char *const []){"ls", "-la", NULL}, 'r');
-    
+
     if (fd1 == -1)
     {
         printf("Помилка: не вдалося запустити ls\n");
@@ -194,10 +194,10 @@ void example_pipe_combination(void)
 
     // Перенаправляємо STDIN на вихід ls
     dup2(fd1, STDIN_FILENO);
-    
+
     // Запускаємо grep
     fd2 = ft_popen("grep", (char *const []){"grep", ".c", NULL}, 'r');
-    
+
     if (fd2 == -1)
     {
         printf("Помилка: не вдалося запустити grep\n");
@@ -211,7 +211,7 @@ void example_pipe_combination(void)
         printf("%s", line);
         free(line);
     }
-    
+
     close(fd1);
     close(fd2);
 }
@@ -232,4 +232,4 @@ int main(void)
     printf("╚════════════════════════════════════════════════════════╝\n");
 
     return (0);
-}        
+}
