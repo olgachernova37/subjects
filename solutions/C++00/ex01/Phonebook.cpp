@@ -10,10 +10,12 @@ Phonebook::Phonebook()
     size = 0;
 }
 
+// Знищує об'єкт телефонної книги.
 Phonebook::~Phonebook()
 {
 }
 
+// Скорочує рядки, щоб вони вміщалися в таблицю.
 std::string Phonebook::truncate(const std::string& str) const
 {
     if (str.length() > 10)
@@ -21,6 +23,7 @@ std::string Phonebook::truncate(const std::string& str) const
     return str;
 }
 
+// Виводить таблицю списку контактів.
 void Phonebook::displayTable() const
 {
     std::cout << "|" << std::setw(10) << "INDEX";
@@ -38,6 +41,7 @@ void Phonebook::displayTable() const
     }
 }
 
+// Виводить повні дані одного контакту.
 void Phonebook::displayContact(int idx) const
 {
     std::cout << "First name: " << contacts[idx].getFirstName() << std::endl;
@@ -47,6 +51,7 @@ void Phonebook::displayContact(int idx) const
     std::cout << "Darkest secret: " << contacts[idx].getDarkestSecret() << std::endl;
 }
 
+// Зберігає контакт у циклічному буфері.
 void Phonebook::addContact(const Contact& contact)
 {
     contacts[index] = contact;
@@ -56,6 +61,7 @@ void Phonebook::addContact(const Contact& contact)
     std::cout << "Contact added!" << std::endl;
 }
 
+// Запитує індекс і показує вибраний контакт.
 void Phonebook::searchContact()
 {
     if (size == 0)

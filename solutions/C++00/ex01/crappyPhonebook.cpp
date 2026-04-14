@@ -4,6 +4,7 @@
 #include "Contact.hpp"
 using namespace std;
 
+// Зчитує від користувача непорожнє значення.
 string getInput(const string& prompt)
 {
     string input;
@@ -19,6 +20,7 @@ string getInput(const string& prompt)
 
 
 
+// Запускає цикл команд телефонної книги.
 int main()
 {
     Phonebook phonebook;

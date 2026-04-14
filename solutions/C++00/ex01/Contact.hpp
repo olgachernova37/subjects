@@ -12,7 +12,7 @@ private:
     std::string darkestSecret;
 
 public:
-    Contact(); // конструктор (зробить isSet = false)
+    Contact(); // конструктор (створює порожній контакт)
 
     void setFirstName(const std::string& s);
     void setLastName(const std::string& s);
@@ -24,7 +24,6 @@ public:
     std::string getNickname() const;
     std::string getPhoneNumber() const;
     std::string getDarkestSecret() const;
-   //
     ~Contact();
 };
 #endif

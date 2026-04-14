@@ -2,50 +2,73 @@
 #include <cctype>
 #include "Phonebook.hpp"
 #include "Contact.hpp"
-using namespace std;
 
-Contact::Contact() {
+// Ініціалізує порожній контакт.
+Contact::Contact()
+{
 	firstName = "";
 	lastName = "";
 	nickname = "";
 	phoneNumber = "";
 	darkestSecret = "";
 }
-Contact::~Contact() {
+// Знищує об'єкт контакту.
+Contact::~Contact()
+{
 }
-std::string Contact::getFirstName() const {
-    return firstName;
+// Повертає ім'я.
+std::string Contact::getFirstName() const
+{
+	return firstName;
 }
-std::string Contact::getLastName() const {
-    return lastName;
+// Повертає прізвище.
+std::string Contact::getLastName() const
+{
+	return lastName;
 }
-std::string Contact::getNickname() const {
-    return nickname;
+// Повертає псевдонім.
+std::string Contact::getNickname() const
+{
+	return nickname;
 }
-std::string Contact::getPhoneNumber() const {
-    return phoneNumber;
+// Повертає номер телефону.
+std::string Contact::getPhoneNumber() const
+{
+	return phoneNumber;
 }
-std::string Contact::getDarkestSecret() const {
-    return darkestSecret;
+// Повертає найтемнішу таємницю.
+std::string Contact::getDarkestSecret() const
+{
+	return darkestSecret;
 }
 
-void Contact::setFirstName(const std::string& fName) {
-    firstName = fName;
+// Встановлює ім'я.
+void Contact::setFirstName(const std::string &fName)
+{
+	firstName = fName;
 }
-void Contact::setLastName(const std::string& lName) {
-    lastName = lName;
+// Встановлює прізвище.
+void Contact::setLastName(const std::string &lName)
+{
+	lastName = lName;
 }
-void Contact::setNickname(const std::string& nick) {
-    nickname = nick;
+// Встановлює псевдонім.
+void Contact::setNickname(const std::string &nick)
+{
+	nickname = nick;
 }
-void Contact::setPhoneNumber(const std::string& pNumber) {
-    phoneNumber = pNumber;
+// Встановлює номер телефону.
+void Contact::setPhoneNumber(const std::string &pNumber)
+{
+	phoneNumber = pNumber;
 }
-void Contact::setDarkestSecret(const std::string& dSecret) {
-    darkestSecret = dSecret;
-
+// Встановлює найтемнішу таємницю.
+void Contact::setDarkestSecret(const std::string &dSecret)
+{
+	darkestSecret = dSecret;
 }
-bool isFull(Contact& contact)
+// Перевіряє, чи всі поля заповнені.
+bool isFull(Contact &contact)
 {
 	if (contact.getLastName() == "" || contact.getFirstName() == "" || contact.getNickname() == "" || contact.getPhoneNumber() == "" || contact.getDarkestSecret() == "")
 	{

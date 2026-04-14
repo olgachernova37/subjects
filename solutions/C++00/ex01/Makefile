@@ -8,7 +8,6 @@ all: $(TARGET)
 
 $(TARGET): $(SRC)
 	$(CXX) $(CXXFLAGS) $(SRC) -o $(TARGET)
-	chmod +x $(TARGET)
 clean:
 	rm -f $(TARGET)
 
