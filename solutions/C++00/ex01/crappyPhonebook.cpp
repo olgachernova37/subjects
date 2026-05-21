@@ -1,19 +1,20 @@
 #include <iostream>
 #include <cctype>
+#include <string>
 #include "Phonebook.hpp"
 #include "Contact.hpp"
-using namespace std;
+
 
 // Зчитує від користувача непорожнє значення.
-string getInput(const string& prompt)
+std::string getInput(const std::string& prompt)
 {
-    string input;
-    cout << prompt;
-    getline(cin, input);
+    std::string input;
+    std::cout << prompt;
+    getline(std::cin, input);
     while (input.empty())
     {
-        cout << "Field cannot be empty. " << prompt;
-        getline(cin, input);
+        std::cout << "Field cannot be empty. " << prompt;
+        getline(std::cin, input);
     }
     return input;
 }
@@ -24,12 +25,12 @@ string getInput(const string& prompt)
 int main()
 {
     Phonebook phonebook;
-    string command;
+    std::string command;
 
     while (true)
     {
-        cout << "Write a command: ";
-        getline(cin, command);
+        std::cout << "Write a command: ";
+        getline(std::cin, command);
         if (command == "ADD")
         {
             Contact contact;
