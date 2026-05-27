@@ -4,10 +4,11 @@ int main()
 {
 	int N =5;
 	std::string name = "Joe";
-	Zombie* zombieHorde(N, name);
-	for(int i=0; i<N; i++)
+	Zombie* horde = zombieHorde(N, name);
+	for(int i = 0; i < N; i++)
 	{
-		delete Zombie[i];
+		horde[i].announce();  // спочатку announce
 	}
+	delete[] horde;
     return 0;
 }
