@@ -1,8 +1,8 @@
 CXX= g++
 CXXFLAGS= -Wall -Wextra -Werror -g -std=c++98
 TARGET= violence
-SRC= main.cpp Weapon.cpp
-HEADERS= Weapon.hpp
+SRC= main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+HEADERS= Weapon.hpp HumanA.hpp HumanB.hpp
 
 INCLUDES= -I.
 all: $(TARGET)
