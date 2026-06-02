@@ -1,8 +1,8 @@
 CXX= g++
 CXXFLAGS= -Wall -Wextra -Werror -g -std=c++98
-TARGET= zombiehorde
-SRC= main.cpp Zombie.cpp zombieHorde.cpp
-HEADERS= Zombie.hpp
+TARGET= harl
+SRC= main.cpp Harl.cpp
+HEADERS= Harl.hpp
 
 all: $(TARGET)
 
