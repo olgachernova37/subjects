@@ -1,8 +1,8 @@
 CXX= g++
 CXXFLAGS= -Wall -Wextra -Werror -g -std=c++98
-TARGET= bsp
-SRC= main.cpp Fixed.cpp Point.cpp bsp.cpp
-HEADERS= Fixed.hpp Point.hpp
+TARGET= program
+SRC= main.cpp ClapTrap.cpp
+HEADERS= ClapTrap.h ClapTrap.hpp
 
 all: $(TARGET)
 
