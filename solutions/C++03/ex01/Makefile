@@ -1,8 +1,8 @@
 CXX= g++
 CXXFLAGS= -Wall -Wextra -Werror -g -std=c++98
 TARGET= program
-SRC= main.cpp ClapTrap.cpp
-HEADERS= ClapTrap.h ClapTrap.hpp
+SRC= main.cpp ClapTrap.cpp ScavTrap.cpp
+HEADERS= ClapTrap.hpp ScavTrap.hpp
 
 all: $(TARGET)
 
